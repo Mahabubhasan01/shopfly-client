@@ -106,49 +106,10 @@ const Navbar = () => {
   return (
     <div>
       {/* Heading navbar */}
-      <div className="navbar bg-accent">
+      <div className="navbar bg-accent text-white z-10">
         <div className="navbar-start">
-          {/* <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
-            </ul>
-          </div> */}
-          <p className=" normal-case text-base">
+         
+          <p className=" normal-case text-base text-white">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, quo
             architecto?
           </p>
@@ -161,7 +122,7 @@ const Navbar = () => {
                 <ul className="p-2">
                   {languages.map((ln) => (
                     <li key={ln.id}>
-                      <a>{ln.name}</a>
+                      <a className="text-black">{ln.name}</a>
                     </li>
                   ))}
                 </ul>
@@ -176,7 +137,7 @@ const Navbar = () => {
                 <ul className="p-2">
                   {currencies.map((ln) => (
                     <li key={ln.id}>
-                      <a>{ln.name}</a>
+                      <a className="text-black z-10">{ln.name}</a>
                     </li>
                   ))}
                 </ul>
@@ -184,9 +145,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {/* <div className="navbar-end">
-          <a className="btn">Button</a>
-        </div> */}
+       
       </div>
       {/* Heading navbar */}
 
@@ -393,14 +352,30 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <div className="flex-none pointer">
+            <button className="mx-3 ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="inline-block w-5 h-5 stroke-current"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <a className="  normal-case text-xl">All Categories</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            
             <li tabIndex={0}>
               <details>
-                <summary>Parent</summary>
+                <summary>Home</summary>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -413,7 +388,7 @@ const Navbar = () => {
             </li>
             <li tabIndex={0}>
               <details>
-                <summary>Parent</summary>
+                <summary>Shop</summary>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -423,9 +398,10 @@ const Navbar = () => {
                   </li>
                 </ul>
               </details>
-            </li><li tabIndex={0}>
+            </li>
+            <li tabIndex={0}>
               <details>
-                <summary>Parent</summary>
+                <summary>Product</summary>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -435,9 +411,10 @@ const Navbar = () => {
                   </li>
                 </ul>
               </details>
-            </li><li tabIndex={0}>
+            </li>
+            <li tabIndex={0}>
               <details>
-                <summary>Parent</summary>
+                <summary>Mega Menu</summary>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -447,9 +424,10 @@ const Navbar = () => {
                   </li>
                 </ul>
               </details>
-            </li><li tabIndex={0}>
+            </li>
+            <li tabIndex={0}>
               <details>
-                <summary>Parent</summary>
+                <summary>Blog</summary>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -459,9 +437,10 @@ const Navbar = () => {
                   </li>
                 </ul>
               </details>
-            </li><li tabIndex={0}>
+            </li>
+            <li tabIndex={0}>
               <details>
-                <summary>Parent</summary>
+                <summary>Pages</summary>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -475,7 +454,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className=""></a>
         </div>
       </div>
     </div>
