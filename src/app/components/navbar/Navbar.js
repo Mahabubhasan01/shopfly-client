@@ -35,6 +35,7 @@ const Navbar = () => {
   ];
   return (
     <div>
+        <h1>Hello world</h1>
       <div>
         {links.map((link) => (
           <Link key={link.id} href={link.url}>
