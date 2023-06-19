@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BlogPost from "./components/blogs/BlogPost";
 import FilteredProducts from "./components/FilterProducts/FilteredProducts";
 import Header from "./components/header/Header";
 import HeaderCategory from "./components/header/HeaderCategory";
@@ -12,6 +13,7 @@ export default function Home({ children }) {
       <HeaderCategory />
       <ProductCat></ProductCat>
       <FilteredProducts />
+     <BlogPost/>
       {children}
     </main>
   );

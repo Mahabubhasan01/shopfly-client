@@ -36,9 +36,9 @@
   height: 100%;
 }
 .employee-name {
-  color: #fff;
+  color: black;
   font-weight: bold;
-  padding: 5px;
+  padding: 3px;
 }
 .employee-name h1 {
   font-size: 30px;

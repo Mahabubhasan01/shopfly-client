@@ -59,7 +59,10 @@ const FilteredProducts = async () => {
                     alt=""
                   />
                 </div>
-                <div className="absolute top-0 m-2 rounded-full bg-white">
+                <div className="absolute top-0 m-2 rounded-full bg-white flex justify-between">
+                  <p className="rounded-full bg-emerald-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
+                    Sale
+                  </p>
                   <p className="rounded-full bg-emerald-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
                     Sale
                   </p>
