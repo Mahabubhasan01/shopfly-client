@@ -2,6 +2,7 @@ import Image from "next/image";
 import FilteredProducts from "./components/FilterProducts/FilteredProducts";
 import Header from "./components/header/Header";
 import HeaderCategory from "./components/header/HeaderCategory";
+import ProductCat from "./components/header/ProductCat";
 import styles from "./page.module.css";
 
 export default function Home({ children }) {
@@ -9,6 +10,7 @@ export default function Home({ children }) {
     <main>
       <Header />
       <HeaderCategory />
+      <ProductCat></ProductCat>
       <FilteredProducts />
       {children}
     </main>
