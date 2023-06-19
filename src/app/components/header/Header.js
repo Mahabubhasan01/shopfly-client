@@ -1,69 +1,99 @@
 import React from "react";
-
+/* https://i.ibb.co/zf4xv7X/dan-gold-4-jh-DO54-BYg-unsplash-1.jpg
+https://i.ibb.co/tskc38v/elaine-casap-qg-HGDbb-SNm8-unsplash.jpg*/
 const Header = () => {
   return (
     <div>
-      <div class="relative w-full">
-       
-        <div class="relative bg-yellow-50">
-          <div class="container m-auto px-6 pt-32 md:px-12 lg:pt-[4.8rem] lg:px-7">
-            <div class="flex items-center flex-wrap px-2 md:px-0">
-              <div class="relative lg:w-6/12 lg:py-24 xl:py-32">
-                <h1 class="font-bold text-4xl text-yellow-900 md:text-5xl lg:w-10/12">
-                  Your favorite dishes, right at your door
-                </h1>
-                <form action="" class="w-full mt-12">
-                  <div class="relative flex p-1 rounded-full bg-white border border-yellow-200 shadow-md md:p-2">
-                    <select
-                      class="hidden p-3 rounded-full bg-transparent md:block md:p-4"
-                      name="domain"
-                      id="domain"
-                    >
-                      <option value="design">FastFood</option>
-                      <option value="development">Restaurant</option>
-                      <option value="marketing">Marketing</option>
-                    </select>
-                    <input
-                      placeholder="Your favorite food"
-                      class="w-full p-4 rounded-full"
-                      type="text"
-                    />
-                    <button
-                      type="button"
-                      title="Start buying"
-                      class="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12"
-                    >
-                      <span class="hidden text-yellow-900 font-semibold md:block">
-                        Search
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 mx-auto text-yellow-900 md:hidden"
-                        fill="currentColor"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                      </svg>
-                    </button>
-                  </div>
-                </form>
-                <p class="mt-8 text-gray-700 lg:w-10/12">
-                  Sit amet consectetur adipisicing elit.{" "}
-                  <a href="#" class="text-yellow-700">
-                    connection
-                  </a>{" "}
-                  tenetur nihil quaerat suscipit, sunt dignissimos.
+      <div class="lg:w-4/5 mx-auto">
+        <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
+          <img
+            alt="gallery"
+            class="w-full object-cover h-full object-center block  absolute inset-0"
+            src="https://i.ibb.co/zf4xv7X/dan-gold-4-jh-DO54-BYg-unsplash-1.jpg"
+          />
+          <div class="text-center relative z-10 w-full">
+            <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
+              Shooting Stars
+            </h2>
+            <p class="leading-relaxed">
+              Skateboard +1 mustache fixie paleo lumbersexual.
+            </p>
+            <a class="mt-3 text-indigo-500 inline-flex items-center">
+              Learn More
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-2">
+          <div class="px-2 w-1/2">
+            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+              <img
+                alt="gallery"
+                class="w-full object-cover h-full object-center block  absolute inset-0"
+                src="https://i.ibb.co/ZG9WvWV/18-ba24dbe5-edaf-4e10-bd41-3a592dbc127b-590-X668-crop-center.webp"
+              />
+              <div class="text-center relative z-10 w-full">
+                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
+                  Shooting Stars
+                </h2>
+                <p class="leading-relaxed">
+                  Skateboard +1 mustache fixie paleo lumbersexual.
                 </p>
+                <a class="mt-3 text-indigo-500 inline-flex items-center">
+                  Learn More
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
               </div>
-              <div class="ml-auto -mb-24 lg:-mb-56 lg:w-6/12">
-                <img
-                  src="https://tailus.io/sources/blocks/food-delivery/preview/images/food.webp"
-                  class="relative"
-                  alt="food illustration"
-                  loading="lazy"
-                  width="4500"
-                  height="4500"
-                />
+            </div>
+          </div>
+          <div class="px-2 w-1/2">
+            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+              <img
+                alt="gallery"
+                class="w-full object-cover h-full object-center block  absolute inset-0"
+                src="https://i.ibb.co/ZG9WvWV/18-ba24dbe5-edaf-4e10-bd41-3a592dbc127b-590-X668-crop-center.webp"
+              />
+              <div class="text-center relative z-10 w-full">
+                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
+                  Shooting Stars
+                </h2>
+                <p class="leading-relaxed">
+                  Skateboard +1 mustache fixie paleo lumbersexual.
+                </p>
+                <a class="mt-3 text-indigo-500 inline-flex items-center">
+                  Learn More
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
