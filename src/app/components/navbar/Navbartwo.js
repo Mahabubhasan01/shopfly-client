@@ -1,5 +1,6 @@
 "use client";
-import React from 'react'
+import React from "react";
+import Link from 'next/link'
 const Navbartwo = () => {
   const [open, setOpen] = React.useState(false);
   const [flyer, setFlyer] = React.useState(false);
@@ -56,7 +57,7 @@ const Navbartwo = () => {
                     "
                   onClick={() => (setFlyer(!flyer), setFlyerTwo(false))}
                 >
-                  <span>Solutions</span>
+                  <span>Categories</span>
                   {/*
                 Heroicon name: solid/chevron-down
   
@@ -311,12 +312,12 @@ const Navbartwo = () => {
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                href="/products"
                 className="text-base font-medium text-gray-500 hover:text-gray-900"
               >
-                Pricing
-              </a>
+                Products
+              </Link>
               <a
                 href="#"
                 className="text-base font-medium text-gray-500 hover:text-gray-900"
