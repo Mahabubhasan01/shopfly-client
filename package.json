@@ -12,10 +12,12 @@
     "axios": "^1.4.0",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
+    "jquery": "^3.7.0",
     "next": "13.4.5",
     "next-swr": "^0.1.2-canary.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-owl-carousel": "^2.3.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

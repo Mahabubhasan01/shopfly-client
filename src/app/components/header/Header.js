@@ -4,96 +4,95 @@ https://i.ibb.co/tskc38v/elaine-casap-qg-HGDbb-SNm8-unsplash.jpg*/
 const Header = () => {
   return (
     <div>
-      <div class="lg:w-4/5 mx-auto">
-        <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-          <img
-            alt="gallery"
-            class="w-full object-cover h-full object-center block  absolute inset-0"
-            src="https://i.ibb.co/zf4xv7X/dan-gold-4-jh-DO54-BYg-unsplash-1.jpg"
-          />
-          <div class="text-center relative z-10 w-full">
-            <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
-              Shooting Stars
-            </h2>
-            <p class="leading-relaxed">
-              Skateboard +1 mustache fixie paleo lumbersexual.
-            </p>
-            <a class="mt-3 text-indigo-500 inline-flex items-center">
-              Learn More
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-4 h-4 ml-2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-2">
-          <div class="px-2 w-1/2">
-            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-              <img
-                alt="gallery"
-                class="w-full object-cover h-full object-center block  absolute inset-0"
-                src="https://i.ibb.co/ZG9WvWV/18-ba24dbe5-edaf-4e10-bd41-3a592dbc127b-590-X668-crop-center.webp"
-              />
-              <div class="text-center relative z-10 w-full">
-                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                  Shooting Stars
-                </h2>
-                <p class="leading-relaxed">
-                  Skateboard +1 mustache fixie paleo lumbersexual.
-                </p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">
-                  Learn More
-                  <svg
-                    fill="none"
+      {" "}
+      <div class="mx-auto container flex justify-center items-center py-12 px-4 sm:px-6 2xl:px-0">
+        <div class="flex flex-col lg:flex-row justify-center items-center space-y-6 lg:space-y-0">
+          <div class="w-80 sm:w-auto flex flex-col justify-start items-start">
+            <div>
+              <p class="text-3xl xl:text-4xl font-semibold leading-9 text-gray-800 dark:text-white">
+                Renovate your home
+              </p>
+            </div>
+            <div class="mt-4 lg:w-4/5 xl:w-3/5">
+              <p class="text-base leading-6 text-gray-600 dark:text-white">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+              </p>
+            </div>
+            <div class="mt-16 w-full">
+              <button class="px-4 bg-gray-900 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200  flex justify-between items-center w-full lg:w-72 h-14 text-white hover:bg-gray-700 focus:ring-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 dark:hover:bg-gray-100">
+                <p class="text-xl font-medium leading-5 ">See More</p>
+                <svg
+                  class="dark:text-gray-900"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.66663 16H25.3333"
                     stroke="currentColor"
+                    stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
+                  />
+                  <path
+                    d="M20 21.3333L25.3333 16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M20 10.6667L25.3333 16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-          <div class="px-2 w-1/2">
-            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+
+          <div class="flex flex-col sm:flex-row jusitfy-center items-center sm:space-x-5 xl:space-x-8 space-y-4 sm:space-y-0">
+            <div class="">
               <img
-                alt="gallery"
-                class="w-full object-cover h-full object-center block  absolute inset-0"
-                src="https://i.ibb.co/ZG9WvWV/18-ba24dbe5-edaf-4e10-bd41-3a592dbc127b-590-X668-crop-center.webp"
+                class="hidden lg:block"
+                src="https://i.ibb.co/61TfVVW/olena-sergienko-gx-KL334b-UK4-unsplash-1.png"
+                alt="sofa"
               />
-              <div class="text-center relative z-10 w-full">
-                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                  Shooting Stars
-                </h2>
-                <p class="leading-relaxed">
-                  Skateboard +1 mustache fixie paleo lumbersexual.
-                </p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+              <img
+                class="w-80 sm:w-auto lg:hidden"
+                src="https://i.ibb.co/QvxmJjB/olena-sergienko-gx-KL334b-UK4-unsplash-1-1.png"
+                alt="sofa"
+              />
+            </div>
+            <div class="flex flex-col justify-center items-center space-y-4 sm:space-y-0 sm:space-y-5 lg:space-y-5 xl:space-y-8">
+              <div>
+                <img
+                  class="hidden lg:block"
+                  src="https://i.ibb.co/1MY5P3y/nirzar-pangarkar-Csw-Kf-D546-Z8-unsplash-1.png"
+                  alt="chairs"
+                />
+                <img
+                  class="w-80 sm:w-auto lg:hidden"
+                  src="https://i.ibb.co/r0rvcCh/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1-1.png"
+                  alt="chairs"
+                />
+              </div>
+              <div>
+                <img
+                  class="hidden lg:block"
+                  src="https://i.ibb.co/9N7ZX2C/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1.png"
+                  alt="chairs"
+                />
+                <img
+                  class="w-80 sm:w-auto lg:hidden"
+                  src="https://i.ibb.co/0BFt400/nirzar-pangarkar-Csw-Kf-D546-Z8-unsplash-2.png"
+                  alt="chairs"
+                />
               </div>
             </div>
           </div>
