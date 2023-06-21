@@ -6,6 +6,7 @@ import HeaderCategory from "./components/header/HeaderCategory";
 import ProductCat from "./components/header/ProductCat";
 import styles from "./page.module.css";
 import ImageSlider from "./utils/ImgSlider";
+import ScrollTop from "./utils/ScroolTop";
 
 export default function Home({ children }) {
   return (
@@ -16,6 +17,7 @@ export default function Home({ children }) {
       <FilteredProducts />
       <ImageSlider/>
      <BlogPost/>
+     <ScrollTop/>
       {children}
     </main>
   );
