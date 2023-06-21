@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import ReactDOM from "react";
-import './cart.css'
- const Cart = () => {
+import "./cart.css";
+const Cart = () => {
   const productData = [
     {
       id: 1,
@@ -104,132 +104,134 @@ import './cart.css'
   );
 
   return (
-    <div className="row justify-content-center m-0">
-      <div className="col-md-8 mt-5 mb-5">
-        <div className="card">
-          <div className="card-header bg-dark p-3">
-            <div className="card-header-flex">
-              <h5 className="text-white m-0">
-                Cart Calculation{" "}
-                {products.length > 0 ? `(${products.length})` : ""}
-              </h5>
-              {products.length > 0 ? (
-                <button
-                  className="btn btn-danger mt-0 btn-sm"
-                  onClick={() => emptycart()}
-                >
-                  <i className="fa fa-trash-alt mr-2"></i>
-                  <span>Empty Cart</span>
-                </button>
+    <div className="body w-full">
+      <div className="row justify-content-center m-0">
+        <div className="col-md-8 mt-5 mb-5">
+          <div className="card">
+            <div className="card-header bg-dark p-3">
+              <div className="card-header-flex">
+                <h5 className="text-white m-0">
+                  Cart Calculation{" "}
+                  {products.length > 0 ? `(${products.length})` : ""}
+                </h5>
+                {products.length > 0 ? (
+                  <button
+                    className="btn btn-danger mt-0 btn-sm"
+                    onClick={() => emptycart()}
+                  >
+                    <i className="fa fa-trash-alt mr-2"></i>
+                    <span>Empty Cart</span>
+                  </button>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+            <div className="card-body p-0">
+              {products.length === 0 ? (
+                <table className="table cart-table mb-0">
+                  <tbody>
+                    <tr>
+                      <td colSpan="6">
+                        <div className="cart-empty">
+                          <i className="fa fa-shopping-cart"></i>
+                          <p>Your Cart Is empty</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               ) : (
-                ""
+                <table className="table cart-table mb-0">
+                  <thead>
+                    <tr>
+                      <th>Action</th>
+                      <th>Product</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th className="text-right">
+                        <span id="amount" className="amount">
+                          Total Amount
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {products.map((data, index) => {
+                      const { id, image, name, price, qty } = data;
+                      return (
+                        <tr key={index}>
+                          <td>
+                            <button
+                              className="prdct-delete"
+                              onClick={() => removeFromCart(index)}
+                            >
+                              <i className="fa fa-trash-alt"></i>
+                            </button>
+                          </td>
+                          <td>
+                            <div className="product-img">
+                              <img src={image} alt="" />
+                            </div>
+                          </td>
+                          <td>
+                            <div className="product-name">
+                              <p>{name}</p>
+                            </div>
+                          </td>
+                          <td>${price}</td>
+                          <td>
+                            <div className="prdct-qty-container">
+                              <button
+                                className="prdct-qty-btn"
+                                type="button"
+                                onClick={() => decreaseQuantity(index)}
+                              >
+                                <i className="fa fa-minus"></i>
+                              </button>
+                              <input
+                                type="text"
+                                name="qty"
+                                className="qty-input-box"
+                                value={qty}
+                                disabled
+                              />
+                              <button
+                                className="prdct-qty-btn"
+                                type="button"
+                                onClick={() => increaseQuantity(index)}
+                              >
+                                <i className="fa fa-plus"></i>
+                              </button>
+                            </div>
+                          </td>
+                          <td className="text-right">
+                            ${(qty * price).toFixed(0)}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th colSpan="3">&nbsp;</th>
+                      <th>
+                        Items in Cart<span className="ml-2 mr-2">:</span>
+                        <span className="text-danger">{cartTotalQty}</span>
+                      </th>
+                      <th className="text-right">
+                        Total Price<span className="ml-2 mr-2">:</span>
+                        <span className="text-danger">
+                          $ {cartTotalAmount.toFixed(0)}
+                        </span>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </table>
               )}
             </div>
-          </div>
-          <div className="card-body p-0">
-            {products.length === 0 ? (
-              <table className="table cart-table mb-0">
-                <tbody>
-                  <tr>
-                    <td colSpan="6">
-                      <div className="cart-empty">
-                        <i className="fa fa-shopping-cart"></i>
-                        <p>Your Cart Is empty</p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            ) : (
-              <table className="table cart-table mb-0">
-                <thead>
-                  <tr>
-                    <th>Action</th>
-                    <th>Product</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th className="text-right">
-                      <span id="amount" className="amount">
-                        Total Amount
-                      </span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {products.map((data, index) => {
-                    const { id, image, name, price, qty } = data;
-                    return (
-                      <tr key={index}>
-                        <td>
-                          <button
-                            className="prdct-delete"
-                            onClick={() => removeFromCart(index)}
-                          >
-                            <i className="fa fa-trash-alt"></i>
-                          </button>
-                        </td>
-                        <td>
-                          <div className="product-img">
-                            <img src={image} alt="" />
-                          </div>
-                        </td>
-                        <td>
-                          <div className="product-name">
-                            <p>{name}</p>
-                          </div>
-                        </td>
-                        <td>${price}</td>
-                        <td>
-                          <div className="prdct-qty-container">
-                            <button
-                              className="prdct-qty-btn"
-                              type="button"
-                              onClick={() => decreaseQuantity(index)}
-                            >
-                              <i className="fa fa-minus"></i>
-                            </button>
-                            <input
-                              type="text"
-                              name="qty"
-                              className="qty-input-box"
-                              value={qty}
-                              disabled
-                            />
-                            <button
-                              className="prdct-qty-btn"
-                              type="button"
-                              onClick={() => increaseQuantity(index)}
-                            >
-                              <i className="fa fa-plus"></i>
-                            </button>
-                          </div>
-                        </td>
-                        <td className="text-right">
-                          ${(qty * price).toFixed(0)}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th>&nbsp;</th>
-                    <th colSpan="3">&nbsp;</th>
-                    <th>
-                      Items in Cart<span className="ml-2 mr-2">:</span>
-                      <span className="text-danger">{cartTotalQty}</span>
-                    </th>
-                    <th className="text-right">
-                      Total Price<span className="ml-2 mr-2">:</span>
-                      <span className="text-danger">
-                        $ {cartTotalAmount.toFixed(0)}
-                      </span>
-                    </th>
-                  </tr>
-                </tfoot>
-              </table>
-            )}
           </div>
         </div>
       </div>
@@ -237,4 +239,4 @@ import './cart.css'
   );
 };
 
-export default Cart
+export default Cart;
