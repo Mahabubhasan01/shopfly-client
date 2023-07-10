@@ -1,6 +1,7 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import './ScroolTop.css'; // Import the CSS file for styling
+"use client";
+import React, { useState, useEffect } from "react";
+import "./ScroolTop.css"; // Import the CSS file for styling
+import {  FaArrowUp } from "react-icons/fa";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,24 +14,23 @@ const ScrollToTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <button
-      className={`back-to-top ${isVisible ? 'show' : ''}`}
+      className={`back-to-top ${isVisible ? "show" : ""}`}
       onClick={scrollToTop}
     >
-      <i className="fas fa-chevron-up"></i>
+      <FaArrowUp />
     </button>
   );
 };
 
 export default ScrollToTopButton;
-

@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import "../styles/allproducts.css";
 import { MdGridView, MdViewCompact } from "react-icons/md";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
-import Paginations from "../utils/Paginations";
 
 const Productss = async () => {
-  const [productGrid, setPrductGrid] = useState("sm:grid-cols-4");
+  const [productGrid, setPrductGrid] = useState(
+    "grid grid-cols-2 gap-6 sm:grid-cols-4"
+  );
+  const [currentPage, setCurrentPage] = useState(1);
   /* fetch data */
   async function getData() {
     const res = await fetch("http://localhost:5000/api/items");
@@ -21,11 +23,25 @@ const Productss = async () => {
 
     return res.json();
   }
-  const products = await getData();
   /* fetch data */
   const setGrid = async (grid) => {
     setPrductGrid(grid);
   };
+  /* Paginations */
+  const itemsPerPage = 40;
+  const products = await getData();
+  const length = products.length;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = products?.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(products?.length / itemsPerPage);
+
+  const onPageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    console.log(pageNumber, "cliecked");
+  };
+
+  /* Paginations */
   return (
     <div>
       <div class="container">
@@ -41,7 +57,7 @@ const Productss = async () => {
                   class="filter__rule-input"
                   data-filter="price"
                   data-interaction="increase"
-                  checked
+                  /* checked */
                 />
                 <label for="filter__input-1" class="filter__rule-label">
                   Fruits
@@ -342,96 +358,24 @@ const Productss = async () => {
                       <button className="m-2 ">View:</button>
                       <button
                         className="m-2 text-4xl "
-                        onClick={() => setGrid("sm:grid-cols-2")}
+                        onClick={() =>
+                          setGrid("grid grid-cols-2 gap-6 sm:grid-cols-2")
+                        }
                       >
                         <MdGridView />
                       </button>
                       <button className="text-5xl ">
                         <MdViewCompact
-                          onClick={() => setGrid("sm:grid-cols-4")}
+                          onClick={() =>
+                            setGrid("grid grid-cols-2 gap-6 sm:grid-cols-4")
+                          }
                         />
                       </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  className={`mt-10 grid grid-cols-2 gap-6 ${productGrid} sm:gap-4 lg:mt-16`}
-                >
-                  {products?.map((d) => (
-                    <article
-                      key={d.id} // Add a unique key for each item
-                      className="relative flex flex-col overflow-hidden rounded-lg border"
-                    >
-                      <div className="aspect-square overflow-hidden">
-                        <img
-                          className="h-full w-full object-cover transition-all duration-300 group-hover:scale-125"
-                          src={d.image}
-                          alt=""
-                        />
-                      </div>
-                      <div className="absolute top-0 m-2 rounded-full bg-white flex justify-between">
-                        <p className="rounded-full bg-emerald-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
-                          Sale
-                        </p>
-                        <p className="rounded-full bg-emerald-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
-                          Sale
-                        </p>
-                      </div>
-                      <div className="my-4 mx-auto flex w-10/12 flex-col items-start justify-between">
-                        <div className="mb-2 flex">
-                          <p className="mr-3 text-sm font-semibold">$99.00</p>
-                          <del className="text-xs text-gray-400"> $79.00 </del>
-                        </div>
-                        <h3 className="mb-2 text-sm text-gray-400">{d.name}</h3>
-                      </div>
-                      <button className="group mx-auto mb-2 flex h-10 w-10/12 items-stretch overflow-hidden rounded-md text-gray-600">
-                        <div className="flex w-full items-center justify-center bg-gray-100 text-xs uppercase transition group-hover:bg-emerald-600 group-hover:text-white">
-                          Add
-                        </div>
-                        <div className="flex items-center justify-center bg-gray-200 px-5 transition group-hover:bg-emerald-500 group-hover:text-white">
-                          +
-                        </div>
-                      </button>
-                    </article>
-                  ))}
-                  {products?.map((d) => (
-                    <article
-                      key={d.id} // Add a unique key for each item
-                      className="relative flex flex-col overflow-hidden rounded-lg border"
-                    >
-                      <div className="aspect-square overflow-hidden">
-                        <img
-                          className="h-full w-full object-cover transition-all duration-300 group-hover:scale-125"
-                          src={d.image}
-                          alt=""
-                        />
-                      </div>
-                      <div className="absolute top-0 m-2 rounded-full bg-white flex justify-between">
-                        <p className="rounded-full bg-emerald-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
-                          Sale
-                        </p>
-                        <p className="rounded-full bg-emerald-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
-                          Sale
-                        </p>
-                      </div>
-                      <div className="my-4 mx-auto flex w-10/12 flex-col items-start justify-between">
-                        <div className="mb-2 flex">
-                          <p className="mr-3 text-sm font-semibold">$99.00</p>
-                          <del className="text-xs text-gray-400"> $79.00 </del>
-                        </div>
-                        <h3 className="mb-2 text-sm text-gray-400">{d.name}</h3>
-                      </div>
-                      <button className="group mx-auto mb-2 flex h-10 w-10/12 items-stretch overflow-hidden rounded-md text-gray-600">
-                        <div className="flex w-full items-center justify-center bg-gray-100 text-xs uppercase transition group-hover:bg-emerald-600 group-hover:text-white">
-                          Add
-                        </div>
-                        <div className="flex items-center justify-center bg-gray-200 px-5 transition group-hover:bg-emerald-500 group-hover:text-white">
-                          +
-                        </div>
-                      </button>
-                    </article>
-                  ))}
-                  {products?.map((d) => (
+                <div className={`mt-10  ${productGrid} sm:gap-4 lg:mt-16`}>
+                  {currentItems?.map((d) => (
                     <article
                       key={d.id} // Add a unique key for each item
                       className="relative flex flex-col overflow-hidden rounded-lg border"
@@ -470,7 +414,77 @@ const Productss = async () => {
                   ))}
                 </div>
               </div>
-              <Paginations  />
+              <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                <div className="flex flex-1 justify-between sm:hidden">
+                  <a
+                    disabled={currentPage === 1}
+                    onClick={() => onPageChange(currentPage - 1)}
+                    className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  >
+                    Previous
+                  </a>
+                  <a
+                    disabled={currentPage === totalPages}
+                    onClick={() => onPageChange(currentPage + 1)}
+                    className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  >
+                    Next
+                  </a>
+                </div>
+                <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm text-gray-700">
+                      Showing <span className="font-medium">{currentPage}</span>{" "}
+                      to{" "}
+                      <span className="font-medium">
+                        {" "}
+                        {currentPage * itemsPerPage}
+                      </span>{" "}
+                      of <span className="font-medium">{length}</span> results
+                    </p>
+                  </div>
+                  <div>
+                    <nav
+                      className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+                      aria-label="Pagination"
+                    >
+                      <button
+                        disabled={currentPage === 1}
+                        onClick={() => onPageChange(currentPage - 1)}
+                        className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                      >
+                        <span className="sr-only">Previous</span>
+                        <BiChevronLeft className="h-5 w-5" aria-hidden="true" />
+                      </button>
+                      {Array.from({ length: totalPages }).map((_, index) => (
+                        <button
+                          key={index + 1}
+                          onClick={() => onPageChange(index + 1)}
+                          className={`relative ${
+                            currentPage === index + 1
+                              ? "z-10 bg-indigo-600 text-white"
+                              : "text-gray-900"
+                          } inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0`}
+                        >
+                          {index + 1}
+                        </button>
+                      ))}
+
+                      <button
+                        onClick={() => onPageChange(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                        className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                      >
+                        <span className="sr-only">Next</span>
+                        <BiChevronRight
+                          className="h-5 w-5"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </nav>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         </div>
